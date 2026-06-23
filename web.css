@@ -1,0 +1,940 @@
+:root{
+    --primary-color:#6366f1;
+    --accent-color:#3f83f8;
+    --text-color:white;
+    --link-color:#007bff;
+    --background-color:#ffffff;
+    --light-gray:#f0f0f0;
+    --gray:#808080;
+    --dark-gray:#555;
+
+
+    --primary-dark: #2c3e50; /* Darker blue-grey for main background */
+    --primary-medium: #34495e; /* Medium blue-grey for sections */
+    --primary-light: #4a6572; /* Lighter blue-grey for subtle accents */
+    --accent-gold: #007bff; /* Golden orange for highlights/buttons */
+    --accent-gold-dark: #a93226; /* Darker gold for hover states */
+    --text-light: #ecf0f1; /* Light grey for primary text */
+    --text-color: white; /* Dark text on light backgrounds */
+
+
+    --background-overlay: rgba(34, 33, 33, 0.4); /* Darker, slightly opaque overlay */
+    --border-subtle: rgba(236, 240, 241, 0.2); /* Subtle light border */
+    --error-red: #e74c3c; /* Brighter error red */
+    --success-green: #27ae60; /* Brighter success green */
+    --shadow-subtle: rgba(0, 0, 0, 0.2);
+    --shadow-medium: rgba(0, 0, 0, 0.4);
+    --shadow-strong: rgba(0, 0, 0, 0.6);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+    color: rgb(250, 245, 245);
+}
+
+body {
+    /* Keep existing background properties */
+    height: 150vh; /* Increased height to 150% of the viewport height */
+    text-align: center;
+    background-color: #B5FFFC;
+    background-image: linear-gradient(0deg, #B5FFFC 0%, #D4A87C 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0; /* Ensure no default margin */
+    padding: 0; /* Ensure no default padding */
+}
+.logo-icon{
+    height: 6.875rem;;
+    width: 5.875rem;
+    position: relative;
+    bottom: 16px;
+    left: 15px;
+    margin-top: 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: none;
+    gap: 0.65rem;
+}
+
+.logo-text{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.header_content{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 1rem;
+}
+
+.contact-button{
+    border-radius: 0.375rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transform: all 0.1s;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    display: none;
+}
+
+@media screen and (min-width:800px) {
+    .contact-button{
+        display: block;
+    }
+}
+
+.contact-button:hover{
+    background-color: #5254f8;
+}
+
+.menu-button{
+    display: none;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--background-color);
+    padding: 0.5rem 0.9rem;
+}
+
+@media screen and (max-width:880px) {
+    .menu-button{
+        display: block;
+       }
+}
+
+.menu-icon{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.main_section{
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    grid-area: 2rem;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0.6rem;
+}
+
+.content_left{
+    text-align: center;
+    animation: slidefromleft 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slidefromleft {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section_label{
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.section_title{
+    font-size: 2.3rem;
+    padding: 1.1rem;
+    color: var(--text-color);
+}
+
+.section_description{
+    color: var(--gray);
+    font-size: 1.13rem;
+}
+
+.button-group{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.start-button,.tour-button{
+    border: none;
+    border-radius: 0.375rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transform: all 0.1s;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+}
+
+.tour-button{
+    background-color: var(--dark-gray);
+}
+
+.start-button:hover{
+    background-color: #5254f8;
+}
+
+.tour-button:hover{
+    background-color: var(--gray);
+}
+
+.content_right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container{
+    border-radius:1.225rem ;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgb(0,0,0,0,1);
+    height: 57vh;
+    width: 90%;
+    margin-top: 2rem;
+}
+
+.section-Image{
+    height: 100%;
+    width : 100%;
+    object-fit: cover;
+}
+
+@media screen and (min-width:800px) {
+    .main_section{
+        flex-direction: row;
+    }
+
+    .content_left{
+        max-width: 50%;
+        text-align: left;
+    }
+
+    .section_title{
+        padding-left: 0;
+    }
+
+    .button-group{
+        justify-content: start;
+        padding-left:0 ;
+        flex-direction: row;
+        gap: 2rem;
+        width: auto;
+    }
+
+    .start-button,.tour-button{
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .section_label{
+        font-size: 1rem;
+    }
+
+    .section_title{
+        font-size: 3.8rem;
+    }
+
+    .image-container{
+        height: 67vh;
+        width: auto;
+        margin-top: 0;
+    }
+    .section_description{
+        font-size: 1.1rem;
+        color: var(--gray);
+        width: 75%;
+    }
+}
+
+.company-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:6rem ;
+    animation: slidefromleft 1s ease forwards;
+}
+
+.svg-img{
+    height: 1.56rem;
+}
+
+.logo-txt{
+    font-size: 1rem;
+}
+
+@media screen and (min-width:800px) {
+    .company-grid{
+        grid-template-columns: repeat(4,1fr);
+        gap: 3.6rem;
+    }
+
+    .company-title{
+        font-size: 2.3rem;
+        font-weight: bold;
+    }
+}
+
+.feature-container{
+    background-color: var(--light-gray);
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.feature-content{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.main-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-title{
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.main-description{
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+.feature-grid{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 2rem;
+    margin-top: 1.3rem;
+}
+
+.feature-svg{
+    width: 2.6rem;
+    height: 2.6rem;
+}
+
+.icon-container{
+    background-color: var(--background-color);
+    height: 3rem;
+    width: 3rem;
+    border-radius:49% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #658ee8;
+    padding: 1.6rem;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.feature-title{
+color: white;
+font-weight: bold;
+font-size: 1.3rem;
+}
+
+.feature-description{
+color: white;
+font-size: 0.9rem;
+}
+
+.feature-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-card:nth-child(1){
+    background-color: #4a90e2;
+}
+.feature-card:nth-child(2){
+    background-color: #ff6289;
+}
+.feature-card:nth-child(3){
+    background-color: #fcbf58;
+}
+.feature-card:nth-child(4){
+    background-color: #44bfc3;
+}
+.feature-card:nth-child(5){
+    background-color: #77b05d;
+}
+.feature-card:nth-child(6){
+    background-color: #7d78b1;
+}
+
+@media screen and (min-width:800px) {
+    .feature-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .feature-description{
+        font-size: 1rem;
+    }
+}
+
+.testimonial-container{
+    background-color: #B5FFFC;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.testimonial-title{
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+.testimonial-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.testimonial-grid{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 2rem;
+}
+
+.testiimonial-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(152, 137, 137);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1.2rem;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.testiimonial-card:hover{
+    transform: scale(1.05);
+    box-shadow:
+0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid blue;
+}
+
+.testimonial-avatar img{
+height: 15.7rem;
+width: 20.6rem;
+border-radius: 10%;
+}
+
+.testimonial-text{
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.testiimonial-name{
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.testiimonial-description{
+    font-size: 0.875rem;
+    color: #777;
+}
+@media screen and (min-width:800px) {
+    .testimonial-grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .testimonial-grid{
+        margin: 0.1rem;
+    }
+}
+@media screen and (min-width:800px) {
+    .newsletter-content{
+        flex-direction: row;
+        height: 40vh;
+    }
+    .news-left{
+        display: block;
+        width: 50%;
+        height: 100%;
+    }
+    .news-right{
+        width: 50%;
+        padding: 2rem;
+        align-items: start;
+    }
+    .news-info{
+        padding: 0 3rem;
+        text-align: left;
+    }
+    .news-title{
+        font-size: 2.5rem;
+        text-align: left;
+    }
+    .nes-desc{
+        text-align: left;
+    }
+    .news-form{
+        flex-direction: row;
+        padding: 0 3rem;
+    }
+    .news-mail{
+        width: auto;
+    }
+    .news-send-button{
+        width: auto;
+    }
+    .news-policy{
+        padding: 0 3rem;
+        text-align: left;
+    }
+}
+
+.footer-container{
+    background-color: #B5FFFC;
+    background-image: linear-gradient(0deg, #B5FFFC 0%, #D4A87C 100%);
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+}
+
+.footer{
+    max-width: 1280px;
+    padding:1.2rem 2.4rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.footer-top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.65rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.logo-svg{
+    width: 4rem;
+    height: 5rem;
+}
+
+.comp-logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: -1.9rem;
+}
+.logo-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.28rem;
+    font-weight: bold;
+    color: black;
+}
+.social-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.filler-text{
+    font-size: 1rem;
+    color: #777;
+    padding: 1rem 0;
+    height: auto;
+    text-align: center;
+}
+.social{
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+}
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    grid-gap: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-grid-heading{
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+.footer-link{
+    color: #777;
+    font-size: 0.875rem;
+    text-align: center;
+}
+.footer-links-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+}
+.footer-grid-heading{
+    margin-bottom: 1rem;
+}
+
+.footer-copyright{
+    color: var(--gray);
+    font-size: 0.75rem;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+    padding-top: 1.15rem;
+    border-top: 2px solid black;
+    text-align: center;
+}
+
+@media screen and (min-width:1080px) {
+    .footer{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .footer-top{
+        width: 34%;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+    .footer-grid{
+        grid-template-columns: repeat(4, 1fr);
+        width: 58%;
+        grid-gap: 5.67rem;
+        text-align: left;
+    }
+    .footer-grid-heading{
+        text-align: left;
+        margin-bottom: 1.65rem;
+    }
+    .footer-links-list{
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+    .filler-text{
+        text-align: left;
+    }
+    .social{
+        justify-content: flex-start;
+    }
+    .footer-link{
+        text-align: left;
+    }
+    .footer-copyright{
+        text-align: left;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .footer-top{
+        padding-left: 1rem;
+    }
+    .footer-grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/* Register Form Styles (adapted to your new design system) */
+.register-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-overlay); /* Use your new overlay variable */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    z-index: 1001; /* Ensure it's above other content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px); /* Apply blur to the backdrop */
+}
+
+.register-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.register-form {
+    width: 100%;
+    max-width: 420px; /* Adjusted: Slightly reduced max-width for a more compact feel */
+    background: var(--background-overlay); /* Background with blur */
+    border-radius: 18px; /* Adjusted: Slightly smaller border-radius for subtle refinement */
+    padding: 25px; /* Kept padding at 25px as requested in previous turn */
+    box-shadow: 0 8px 25px var(--shadow-strong); /* Adjusted: Slightly less intense shadow */
+    backdrop-filter: blur(10px); /* Blur for the form itself */
+    border: 1px solid var(--border-subtle); /* Subtle border */
+    animation: fadeIn 0.8s ease-out forwards; /* Added forwards to keep final state */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Kept gap at 15px as requested in previous turn */
+    box-sizing: border-box;
+    color: var(--text-light); /* Default text color for the form */
+}
+
+/* Re-using fadeIn animation from your body/container for consistency */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.register-form h2 {
+    font-family: 'Playfair Display', serif; /* Use your new heading font */
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.2em; /* Adjusted: Slightly smaller font-size for h2 */
+    color: var(--accent-gold);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Adjusted: Slightly less intense text shadow */
+    letter-spacing: 0.2px; /* Adjusted: Slightly tighter letter spacing */
+    margin-bottom: 20px; /* Adjusted: Reduced margin below title */
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 8px; /* Adjusted: Reduced padding below title border */
+    display: inline-block; /* To make border-bottom fit content */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-message, .success-message { /* Combined for consistent styling with main messages */
+    margin-bottom: 0; /* Let container gap handle spacing */
+    padding: 15px; /* Adjusted: Slightly reduced padding for messages */
+    border-radius: 10px; /* Adjusted: Slightly smaller border-radius for messages */
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 3px 10px var(--shadow-medium); /* Adjusted: Slightly less intense shadow for messages */
+    animation: slideIn 0.6s ease-out forwards; /* Added forwards to keep final state */
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-size: 1em; /* Adjusted: Slightly smaller font size for messages */
+}
+
+/* Re-using slideIn animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.error-message {
+    background-color: var(--error-red);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.success-message {
+    background-color: var(--success-green);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.register-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjusted: Consistent gap between form fields (was 25px) */
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 5px; /* Adjusted: Reduced space between label and input */
+    font-weight: 700;
+    font-size: 1em; /* Adjusted: Slightly smaller font size for labels */
+    color: var(--text-light);
+    text-align: left;
+}
+
+/* --- THE FIX IS HERE --- */
+.register-form input[type="text"],
+.register-form input[type="number"],
+.register-form input[type="tel"] {
+    width: 100%;
+    padding: 12px; /* Adjusted: Slightly reduced input padding */
+    border-radius: 10px; /* Adjusted: Slightly smaller border-radius for inputs */
+    border: 1px solid var(--primary-light);
+    background: var(--primary-medium);
+    color: var(--text-light);
+    font-size: 0.95em; /* Adjusted: Slightly smaller font size for inputs */
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 4px var(--shadow-subtle); /* Adjusted: Slightly less intense inner shadow */
+    -webkit-appearance: none; /* This is key to remove native dropdown appearance */
+    -moz-appearance: none;    /* For Firefox */
+    appearance: none;         /* Standard property */
+    /* *** REMOVED: background-image, background-repeat, background-position, background-size *** */
+    /* *** These were adding the dropdown arrow to regular text inputs *** */
+}
+
+.register-form select {
+    /* Keep these styles for actual dropdowns (<select> tags) */
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--primary-light);
+    background: var(--primary-medium);
+    color: var(--text-light);
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    box-shadow: inset 0 1px 4px var(--shadow-subtle);
+    -webkit-appearance: menulist; /* Allows native dropdown appearance for selects */
+    -moz-appearance: menulist;
+    appearance: menulist;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ecf0f1%22%20d%3D%22M287%2069.9a14.7%2014.7%200%200%200-20.7%200l-111.4%20111.4L43.7%2069.9a14.7%2014.7%200%200%200-20.7%200%2014.7%2014.7%200%200%200%200%2020.7L135.9%20227.1a14.7%2014.7%200%200%200%2020.7%200L287%2090.6a14.7%2014.7%200%200%200%200-20.7z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 8px center; /* Adjusted: Slightly smaller horizontal position for arrow */
+    background-size: 10px auto; /* Adjusted: Slightly smaller arrow size */
+    padding-right: 25px; /* Adjusted: Reduced space for custom arrow */
+}
+
+
+.register-form input[type="text"]:focus,
+.register-form input[type="number"]:focus,
+.register-form select:focus,
+.register-form input[type="tel"]:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.4), inset 0 1px 4px var(--shadow-subtle); /* Adjusted: Slightly smaller glow and inner shadow */
+    background-color: var(--primary-dark);
+}
+
+/* Button for "Sign up" - consistent with main submit button */
+.register-form button[type="submit"] {
+    width: fit-content;
+    padding: 15px 30px; /* Adjusted: Slightly reduced padding for submit button */
+    margin: 25px auto 0; /* Adjusted: Reduced top margin */
+    display: block;
+    background-color: var(--accent-gold);
+    color: var(--text-color); /* Kept original, assuming this is correct for your palette */
+    font-weight: 700;
+    font-size: 1.1em; /* Adjusted: Slightly smaller font size for submit button */
+    border: none;
+    border-radius: 12px; /* Adjusted: Slightly smaller border-radius for submit button */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px var(--shadow-medium); /* Adjusted: Slightly less intense shadow */
+    text-transform: uppercase;
+    letter-spacing: 0.8px; /* Adjusted: Slightly tighter letter spacing */
+    outline: none;
+}
+
+.register-form button[type="submit"]:hover {
+    background-color: var(--accent-gold-dark);
+    transform: translateY(-3px) scale(1.01); /* Adjusted: Slightly less aggressive hover effect */
+    box-shadow: 0 8px 20px var(--shadow-strong); /* Adjusted: Slightly less intense hover shadow */
+}
+
+/* Container for bottom links and back button */
+.register-form-bottom-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Adjusted: Slightly reduced gap for bottom links */
+    margin-top: 20px; /* Adjusted: Reduced top margin */
+}
+
+.register-form p {
+    font-size: 0.9em; /* Adjusted: Slightly smaller font size for paragraph */
+    color: var(--text-light);
+    text-align: center;
+    margin: 0;
+}
+
+.register-form p a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.register-form p a:hover {
+    color: var(--accent-gold-dark);
+    text-decoration: underline;
+}
+
+/* Style for the new "Back" button */
+.back-from-register-btn {
+    background: var(--primary-light);
+    color: var(--text-light);
+    box-shadow: 0 3px 8px var(--shadow-subtle); /* Adjusted: Slightly less intense shadow */
+    padding: 10px 20px; /* Adjusted: Slightly reduced padding for back button */
+    font-size: 0.9em; /* Adjusted: Slightly smaller font size for back button */
+    width: fit-content;
+    margin: 0 auto;
+    border: none;
+    border-radius: 12px; /* Adjusted: Consistent border-radius */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    outline: none;
+}
+
+.back-from-register-btn:hover {
+    background: #5f7a8c;
+    transform: translateY(-2px); /* Adjusted: Slightly less aggressive hover effect */
+    box-shadow: 0 4px 12px var(--shadow-medium); /* Adjusted: Slightly less intense hover shadow */
+}
+
+/* Responsive adjustments for register form */
+@media (max-width: 768px) {
+    .register-form {
+        padding: 25px; /* Adjusted: Consistent with new base padding */
+        margin: 15px auto; /* Adjusted: Reduced vertical margin for small screens */
+    }
+    .register-form h2 {
+        font-size: 1.8em; /* Adjusted: Smaller h2 on small screens */
+    }
+    .register-form button[type="submit"],
+    .back-from-register-btn {
+        padding: 12px 20px; /* Adjusted: Smaller padding for buttons on small screens */
+        font-size: 0.9em; /* Adjusted: Smaller font size for buttons on small screens */
+    }
+    .register-form-bottom-links {
+        gap: 8px; /* Adjusted: Smaller gap on smaller screens */
+    }
+}
